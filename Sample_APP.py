@@ -13,6 +13,7 @@
 #       NSO Wrapper_API module to access the NSO API
 #
 #   WARNING:
+#       This script is meant for educational purposes only.
 #       Any use of these scripts and tools is at
 #       your own risk. There is no guarantee that
 #       they have been through thorough testing in a
@@ -21,7 +22,9 @@
 #       incurred with their use.
 #
 #   INFORMATION:
-#       If you require any information please contact gve-programmability@cisco.com
+#       If you have further questions about this API and script, please contact GVE. Here are the contact details:
+#           For internal Cisco gve-programmability@cisco.com
+#           For Cisco partners, open a case at www.cisco.com/go/ph
 
 import sys
 from Wrapper_API import Wrapper_API
