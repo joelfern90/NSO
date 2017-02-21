@@ -11,3 +11,5 @@ headers = {
     }
 
 response = requests.request("DELETE", url, headers=headers, auth=(user, password))
+
+print("Telstra VPN Deleted")

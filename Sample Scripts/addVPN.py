@@ -12,3 +12,4 @@ headers = {
 
 response = requests.request("POST", url, data=payload, headers=headers, auth=(user, password))
 
+print("Telstra VPN Created")
