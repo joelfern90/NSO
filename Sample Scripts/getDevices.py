@@ -1,3 +1,5 @@
+# Script receives a list of devices currently configured under NSO.
+
 import requests
 import sys
 

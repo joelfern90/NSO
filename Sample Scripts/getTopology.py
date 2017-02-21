@@ -1,3 +1,5 @@
+# Retrieves a list of the devices in the topology and their links configured in NSO.
+
 import requests
 import sys
 

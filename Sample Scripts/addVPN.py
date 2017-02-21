@@ -1,3 +1,5 @@
+# Script creates a VPN for a customer called Telstra. Data is taken from a seperate JSON file
+
 import requests
 
 url = "http://198.18.134.28:8080/api/running/vpn"
@@ -10,4 +12,3 @@ headers = {
 
 response = requests.request("POST", url, data=payload, headers=headers, auth=(user, password))
 
-print(response.text)
