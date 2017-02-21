@@ -1,5 +1,5 @@
 #
-#   Cisco Network Services Orchestrator(NSO) Wrapper API
+#   Cisco Network Services Orchestrator(NSO) Sample App
 #       v.01
 #
 #   Joel Fernandez(joelfern@cisco.com)
