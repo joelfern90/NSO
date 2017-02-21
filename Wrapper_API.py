@@ -1,6 +1,6 @@
 #
 #   Cisco Network Services Orchestrator(NSO) Wrapper API
-#        v.01
+#       v.01
 #
 #   Joel Fernandez(joelfern@cisco.com)
 #       Feb 2017
@@ -9,7 +9,7 @@
 #       access to the Network Services Orchestrator API.
 #
 #   REQUIREMENTS:
-#       Python requests library (issue the "pip install requests" command in shell or cmd)
+#       Python requests library (issue the 'pip install requests' command in shell or cmd)
 #
 #   WARNING:
 #       This script is meant for educational purposes only.
@@ -42,7 +42,7 @@ class Wrapper_API(object):
 
         # Retrieving config data from RESTCONF.
 
-        url = "http://" + host + "/api" + "/" + phrase
+        url = 'http://' + host + '/api' + '/' + phrase
 
         # RESTCONF media types for REST API headers
         headers = {'Content-Type': 'application/vnd.yang.data+json',
@@ -57,21 +57,21 @@ class Wrapper_API(object):
 
         # Returns list of Devices
     def getDevices(self):
-        devicesURL = "running/devices"
+        devicesURL = 'running/devices'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(devicesURL)
         return apiResponse
 
         # Returns device Topology
     def getTopology(self):
-        TopologyURL = "running/topology"
+        TopologyURL = 'running/topology'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(TopologyURL)
         return apiResponse
 
         # Returns SNMP Config
     def getSnmpConfig(self):
-        snmpConfigURL = "running/snmp"
+        snmpConfigURL = 'running/snmp'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(snmpConfigURL)
         return apiResponse
