@@ -32,45 +32,48 @@ user = 'admin'
 password = 'admin'
 
 class Wrapper_API(object):
-
+    """
+    This class is uesd to interact with the NSO API
+    """
     def __init__(self):
         self.host = host
         self.user = user
         self.password = password
 
     def send_api_request(self, phrase):
-
-        # Retrieving config data from RESTCONF.
-
+        """
+        Sends a request to the API for retrieving data.
+        """
         url = 'http://' + host + '/api' + '/' + phrase
-
-        # RESTCONF media types for REST API headers
         headers = {'Content-Type': 'application/vnd.yang.data+json',
                    'Accept': 'application/vnd.yang.data+json'}
-
-        # this statement performs a GET on the specified url
         response = requests.get(url, auth=(user, password),
                                 headers=headers, verify=False)
 
-        # return the json as text
         return response.text
 
-        # Returns list of Devices
     def getDevices(self):
+        """
+        Retreives a list of devices from the NSO API
+        """
         devicesURL = 'running/devices'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(devicesURL)
         return apiResponse
 
-        # Returns device Topology
     def getTopology(self):
+        """
+        Retrieves a list of devices and their relationships in a topology from the NSO API
+        """
         TopologyURL = 'running/topology'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(TopologyURL)
         return apiResponse
 
-        # Returns SNMP Config
     def getSnmpConfig(self):
+        """
+        Retries SNMP config form the NSO API
+        """
         snmpConfigURL = 'running/snmp'
         apiRequest = Wrapper_API()
         apiResponse = apiRequest.send_api_request(snmpConfigURL)
