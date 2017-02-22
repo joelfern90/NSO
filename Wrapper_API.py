@@ -28,7 +28,7 @@
 import requests
 
 host = '198.18.134.28:8080'
-user = 'admin'
+username = 'admin'
 password = 'admin'
 
 class Wrapper_API(object):
@@ -37,7 +37,7 @@ class Wrapper_API(object):
     """
     def __init__(self):
         self.host = host
-        self.user = user
+        self.username = username
         self.password = password
 
     def send_api_request(self, phrase):
@@ -47,7 +47,7 @@ class Wrapper_API(object):
         url = 'http://' + host + '/api' + '/' + phrase
         headers = {'Content-Type': 'application/vnd.yang.data+json',
                    'Accept': 'application/vnd.yang.data+json'}
-        response = requests.get(url, auth=(user, password),
+        response = requests.get(url, auth=(username, password),
                                 headers=headers, verify=False)
         return response.text
 
