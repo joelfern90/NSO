@@ -8,29 +8,22 @@ user = 'admin'
 password = 'admin'
 
 def send_api_request():
-
-        # Retrieving config data from RESTCONF.
-
-        url = 'http://' + host + '/api/running/topology'
-
-        # RESTCONF media types for REST API headers
-        headers = {'Content-Type': 'application/vnd.yang.data+json',
+    """
+    Sends a request to the API for retrieving data
+    """
+    url = 'http://' + host + '/api/running/topology'
+    headers = {'Content-Type': 'application/vnd.yang.data+json',
                    'Accept': 'application/vnd.yang.data+json'}
-
-        # this statement performs a GET on the specified url
-        response = requests.get(url, auth=(user, password),
+    response = requests.get(url, auth=(user, password),
                                 headers=headers, verify=False)
 
-        # return the json as text
-        return response.text
+    return response.text
 
 def main():
-
-    # Simple main method calling our function.
-
+    """
+    Sends a request to the API for retrieving data
+    """
     devices = send_api_request()
-
-    # Prints out JSON Response
 
     print(devices)
 
