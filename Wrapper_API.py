@@ -49,7 +49,6 @@ class Wrapper_API(object):
                    'Accept': 'application/vnd.yang.data+json'}
         response = requests.get(url, auth=(user, password),
                                 headers=headers, verify=False)
-
         return response.text
 
     def getDevices(self):
