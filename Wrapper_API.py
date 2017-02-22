@@ -33,7 +33,7 @@ password = 'admin'
 
 class Wrapper_API(object):
     """
-    This class is uesd to interact with the NSO API
+    This class is used to interact with the NSO API
     """
     def __init__(self):
         self.host = host
@@ -53,7 +53,7 @@ class Wrapper_API(object):
 
     def getDevices(self):
         """
-        Retreives a list of devices from the NSO API
+        Retrieves a list of devices from the NSO API
         """
         devicesURL = 'running/devices'
         apiRequest = Wrapper_API()
@@ -71,7 +71,7 @@ class Wrapper_API(object):
 
     def getSnmpConfig(self):
         """
-        Retries SNMP config form the NSO API
+        Retrieves SNMP config from the NSO API
         """
         snmpConfigURL = 'running/snmp'
         apiRequest = Wrapper_API()
