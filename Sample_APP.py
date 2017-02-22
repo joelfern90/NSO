@@ -30,15 +30,13 @@ import sys
 from Wrapper_API import Wrapper_API
 
 def main():
-
-    # Simple main method calling our function.
-
+    """
+    Main method for our initializing our Wrapper API and calling functions
+    """
     getWrapperAPI = Wrapper_API()
     getDevices = getWrapperAPI.getDevices()
     getTopology = getWrapperAPI.getTopology()
     getSnmpConfig = getWrapperAPI.getSnmpConfig()
-
-    # Prints out JSON Response
 
     print(getDevices)
     print(getTopology)
