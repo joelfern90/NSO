@@ -40,7 +40,7 @@ class Wrapper_API(object):
         self.username = username
         self.password = password
 
-    def send_api_request(self, phrase):
+   def send_api_request(self, phrase):
         """
         Sends a request to the API for retrieving data.
         """
