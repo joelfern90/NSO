@@ -37,32 +37,34 @@ def main():
     destinationBandwidth = input("Bandwidth: ")
     destinationAsNumber = input("AS Number: ")
 
-data = {
-    "l3vpn:l3vpn": {
-    'name' : vpnName,
-    'route-distinguisher' : routeDistinguisher,
-    'endpoint' : [
+    data = {
+        "l3vpn:l3vpn": {
+        'name': vpnName,
+        'route-distinguisher': routeDistinguisher,
+        'endpoint': [
         {
-    'id' : sourceID,
-    'ce-device': sourceCeDevice,
-    'ce-interface' : sourceCeInterface,
-    'ip-network' : sourceNetwork,
-    'bandwidth' : sourceBandwidth,
-    'as-number' : sourceAsNumber
+        'id': sourceID,
+        'ce-device': sourceCeDevice,
+        'ce-interface': sourceCeInterface,
+        'ip-network': sourceNetwork,
+        'bandwidth': sourceBandwidth,
+        'as-number': sourceAsNumber
         },
         {
-    'id': destinationID,
-    'ce-device': destinationCeDevice,
-    'ce-interface': destinationCeInterface,
-    'ip-network': destinationNetwork,
-    'bandwidth': destinationBandwidth,
-    'as-number': destinationAsNumber
+        'id': destinationID,
+        'ce-device': destinationCeDevice,
+        'ce-interface': destinationCeInterface,
+        'ip-network': destinationNetwork,
+        'bandwidth': destinationBandwidth,
+        'as-number': destinationAsNumber
         }
-    ]
+        ]
+        }
     }
-}
 
-json_str = json.dumps(data)
+    json_str = json.dumps(data)
+    print()
+    print(data)
 
 if __name__ == "__main__":
     main()
