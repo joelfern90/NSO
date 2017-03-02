@@ -50,31 +50,34 @@ def main():
             'name': vpnName,
             'route-distinguisher': routeDistinguisher,
             'endpoint': [
-        {
-            'id': sourceID,
-            'ce-device': sourceCeDevice,
-            'ce-interface': sourceCeInterface,
-            'ip-network': sourceNetwork,
-            'bandwidth': sourceBandwidth,
-            'as-number': sourceAsNumber
-        },
-        {
-            'id': destinationID,
-            'ce-device': destinationCeDevice,
-            'ce-interface': destinationCeInterface,
-            'ip-network': destinationNetwork,
-            'bandwidth': destinationBandwidth,
-            'as-number': destinationAsNumber
+            {
+                'id': sourceID,
+                'ce-device': sourceCeDevice,
+                'ce-interface': sourceCeInterface,
+                'ip-network': sourceNetwork,
+                'bandwidth': sourceBandwidth,
+                'as-number': sourceAsNumber
+            },
+            {
+                'id': destinationID,
+                'ce-device': destinationCeDevice,
+                'ce-interface': destinationCeInterface,
+                'ip-network': destinationNetwork,
+                'bandwidth': destinationBandwidth,
+                'as-number': destinationAsNumber
+            }
+            ]
+            }
         }
-        ]
-        }
-    }
 
     json_str = json.dumps(data)
     print()
     print(data)
 
-    response = requests.request("POST", url, data=data, headers=headers, auth=(user, password))
+    #with open('filename.extension', 'w') as outfile:
+        #json.dump(data, outfile)
+
+    #response = requests.request("POST", url, data=data, headers=headers, auth=(user, password))
     print()
     print("VPN Created")
 
