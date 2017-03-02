@@ -38,22 +38,28 @@ def main():
     destinationAsNumber = input("AS Number: ")
 
 data = {
-
+    "l3vpn:l3vpn": {
     'name' : vpnName,
     'route-distinguisher' : routeDistinguisher,
+    'endpoint' : [
+        {
     'id' : sourceID,
     'ce-device': sourceCeDevice,
     'ce-interface' : sourceCeInterface,
     'ip-network' : sourceNetwork,
     'bandwidth' : sourceBandwidth,
     'as-number' : sourceAsNumber
-
+        },
+        {
     'id': destinationID,
     'ce-device': destinationCeDevice,
     'ce-interface': destinationCeInterface,
     'ip-network': destinationNetwork,
     'bandwidth': destinationBandwidth,
     'as-number': destinationAsNumber
+        }
+    ]
+    }
 }
 
 json_str = json.dumps(data)
