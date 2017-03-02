@@ -1,6 +1,14 @@
 import json
+import requests
 
 #### This code is under development - UNFINISHED
+
+url = "http://198.18.134.28:8080/api/running/vpn"
+user = 'admin'
+password = 'admin'
+headers = {
+        'content-type': "application/vnd.yang.data+json",
+        }
 
 def main():
     """
@@ -65,6 +73,11 @@ def main():
     json_str = json.dumps(data)
     print()
     print(data)
+
+    response = requests.request("POST", url, data=data, headers=headers, auth=(user, password))
+    print()
+    print("VPN Created")
+
 
 if __name__ == "__main__":
     main()
